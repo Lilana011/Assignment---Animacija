@@ -1,168 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Advanced CSS - Assignment 1</title>
-    <style>
-	
-	#main-container {
-perspective: 400px;
-position: relative;
-width: 300px;
-height: 220px;
-margin: 80px auto;
-}
-
-@keyframes carousel-animation {
-    0% {
-        transform: translateZ(-300px) rotate3d(0, 1, 0, 0deg);
-    }
-
-    45% {
-        transform: translateZ(-300px) rotate3d(0, 1, 0, 160deg);
-    }
-
-    55% {
-        transform: translateZ(-300px) rotate3d(0, 1, 0, 160deg);
-    }
-
-    100% {
-         transform: translateZ(-300px) rotate3d(0, 1, 0, 360deg);
-    }
-}
-
-#tile-container {
-transform: translateZ(-300px) rotate3d(0, 1, 0, 0deg);
-transform-style: preserve-3d;
-animation-name: carousel-animation;
-animation-duration: 4s;
-animation-iteration-count: infinite;
-animation-delay: 1s;
-}
-
-.tile {
-width: 300px;
-height: 220px;
-border-radius: 8px;
-position: absolute;
-margin: 0 auto;
-background-repeat: no-repeat;
-background-position: center;
-background-size: 64px;
-opacity: 0.95;
-}
-
-
-#tile-1 {
-background-color: #914E67;
-transform: rotateY(0deg) translateZ(300px);
-}
-
-#tile-2 {
-background-color: #4FBA6F;
-transform: rotateY(72deg) translateZ(300px);
-}
-
-#tile-3 {
-background-color: #5192D2;
-transform: rotateY(144deg) translateZ(300px);
-}
-
-#tile-4 {
-background-color: #E8BF1C;
-transform: rotateY(216deg) translateZ(300px);
-}
-
-#tile-5 {
-background-color: #5D7586;
-transform: rotateY(288deg) translateZ(300px);
-}
-
-		
-
-	
-a[href^="https://www.google.com"] { 
-    color: green; 
-}
-
-a[target] {
-    color: red;
- }
- 
- 
-
-
- 
- #second-div p:nth-child(2n+2) {
-  color: red;
-}	
- 
- 
-#second-div p:nth-child(2n+1) {
-  color: blue;
-}	
- 
-
-
-#first-div  > p:first-of-type::after {
-  content:" -NEW"; color:yellow;
-}	
-
-#first-div  > p:last-of-type::after {
-  content:" -NEW"; color:yellow;
-}
-
-p:last-of-type:hover {
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Assignment - Animacija </title>
+<style>
+ body {
+        height: 100vh;
+  background-color: #050210;
+  display: flex;
+  align-items: center;
+  justify-content: center;
    
-  font-style: italic;
+    }
+    
+	
+    .circle {
+        position: relative;
+        width: 40vh;
+        height: 40vh;
+        background: linear-gradient(#fb5dad , #55fb9f , #b97aff );
+        border-radius: 70%;
+        animation: animate 1.03s linear infinite;
+
+    }
+
+@keyframes animate {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+	
+	
 }
 
+	
+    .circle:after {
+        content:'';
+        position: absolute;
+        top: 35px;
+        right: 35px;
+        bottom: 35px;
+        left: 35px;
+        border-radius: 50%;
+        background-color:#050210;
+		
+	 
+    
+    }
+	
+	
+		  
+			  
+    .circle  span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#fb5dad  , #55fb9f , #b97aff );
+        border-radius: 50%;
+		
+	    }
+    .circle span:nth-child(1) {
+        filter: blur(5px);
 
-
-
-
-    </style>
+    }
+    
+    .circle span:nth-child(2) {
+        filter: blur(10px);
+    }
+    
+    .circle span:nth-child(3) {
+        filter: blur(20px);
+    }
+    
+    .circle span:nth-child(4) {
+        filter: blur(55px);
+    }
+	
+		
+</style>
 </head>
-
 <body>
-    <h1>Main Heading</h1>
-    <p>Paragraph 1</p>
-    <a href="https://www.google.com/">Google</a>
-    <a href="https://www.google.com/doodles">Google Doodles</a>
-    <a href="https://www.link-group.eu/" target="_blank">Goto Link Group</a>
-    <div id="first-div">
-        <h2>Subheading</h2>
-        <p>Paragraph 2</p>
-        <p>Paragraph 3</p>
-        <div id="second-div">
-            <h3>Sub subheading</h3>
-            <p>Paragraph 4</p>
-            <p>Paragraph 5</p>
-            <p>Paragraph 6</p>
-            <p>Paragraph 7</p>
-            <p>Paragraph 8</p>
-        </div>
-    </div>
-    <p>Paragraph 9</p>
-    <p>Paragraph 10</p>
-	
-	<img src="https://www.link-elearning.com/linkdl/coursefiles/1452/ADCSS9_07_05_animacija.gif" alt="https://www.link-elearning.com/linkdl/coursefiles/1452/ADCSS9_07_05_animacija.gif" class="transparent">
-	
-	
-	
-	<div id="main-container">
-    <div id="tile-container">
-       <div class="tile" id="tile-1"></div>
-       <div class="tile" id="tile-2"></div>
-       <div class="tile" id="tile-3"></div>
-       <div class="tile" id="tile-4"></div>
-       <div class="tile" id="tile-5"></div>
-    </div>
+<div class="circle">
+
+<span>  </span>
+<span>  </span>
+<span>  </span>
+<span>  </span> 
+
+
 </div>
 
-		
-	
 </body>
-
 </html>
